@@ -37,10 +37,13 @@ class libros {
 
     editar(  NuevoTitulo, NuevoAutor, NuevoGenero, NuevoNumeroPaginas,){
         
-        this.NuevoTitulo = NuevoTitulo
-        this.NuevoAutor = NuevoAutor
-        this.NuevoGenero = NuevoGenero
-        this.NuevoNumeroPaginas = NuevoNumeroPaginas
+        this.titulo = NuevoTitulo /*asignar nuevos parametros, 
+        estos se asigna al titulo existente para que a la hora
+        de actualizar el titulo ya definido se remplaze con uno nuevo,
+        asi todos los demas campos*/
+        this.autor = NuevoAutor 
+        this.genero = NuevoGenero
+        this.paginas = NuevoNumeroPaginas
 
         this.Newinfo = `
         Nombre: ${NuevoTitulo}, Autor: ${NuevoAutor}, Genero: ${NuevoGenero}, Numero de paginas: ${NuevoNumeroPaginas}`
@@ -116,6 +119,6 @@ const libro2 = new libros("un libro", "nadie", "drama", 500)
 
 
 biblioteca.agregarLibro(libro1)
-biblioteca.mostrarCatalogo(libro1)
-libro1.editar("el nuevo", "RICARDO", "romance", 900)
-libro1.mostrarNuevaInfo()
+biblioteca.mostrarCatalogo()
+libro1.editar("el nuevo", "RICARDO", "romance", 900) // aqui se selecciona el libro a editar y se asignan los nuevos valores
+biblioteca.mostrarCatalogo()
